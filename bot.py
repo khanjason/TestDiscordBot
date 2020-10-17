@@ -1,4 +1,14 @@
 
+import discord
+import time
+# Import the os module.
+import os
+
+# Import load_dotenv function from dotenv module.
+
+
+import redis
+from discord.ext import commands
 
 # Loads the .env file that resides on the same level as the script.
 #load_dotenv()
