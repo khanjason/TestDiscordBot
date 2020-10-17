@@ -1,16 +1,4 @@
-# Import discord.py. Allows access to Discord's API.
-import discord
-import time
-# Import the os module.
-import os
 
-# Import load_dotenv function from dotenv module.
-
-
-import redis
-redis_server = redis.Redis() # Create access to Redis
-# Import commands from the discord.ext module.
-from discord.ext import commands
 
 # Loads the .env file that resides on the same level as the script.
 #load_dotenv()
