@@ -1,4 +1,4 @@
-
+from boto.s3.connection import S3Connection
 import discord
 import time
 # Import the os module.
@@ -19,7 +19,8 @@ general_speakers=[]
 
 
 # Grab the API token from the .env file.
-DISCORD_TOKEN = process.env.BOT_TOKEN
+DISCORD_TOKEN = os.getenv('BOT_TOKEN')
+#s3 = S3Connection(os.environ['BOT_TOKEN'], os.environ['S3_SECRET'])
 
 # Creates a new Bot object with a specified prefix. It can be whatever you want it to be.
 bot = commands.Bot(command_prefix="!")
