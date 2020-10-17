@@ -5,7 +5,7 @@ import time
 import os
 
 # Import load_dotenv function from dotenv module.
-from dotenv import load_dotenv
+
 
 import redis
 redis_server = redis.Redis() # Create access to Redis
@@ -21,7 +21,7 @@ general_speakers=[]
 
 
 # Grab the API token from the .env file.
-DISCORD_TOKEN = str(redis_server.get(‘AUTH_KEY’).decode(‘utf-8’))
+DISCORD_TOKEN = process.env.BOT_TOKEN
 
 # Creates a new Bot object with a specified prefix. It can be whatever you want it to be.
 bot = commands.Bot(command_prefix="!")
