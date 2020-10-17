@@ -44,6 +44,7 @@ async def on_message(message):
 	# Adds this value to the $help message.
 	brief="Prints pong back to the channel."
 )
+@commands.has_role('Committee')
 async def ping(ctx):
 	# Sends a message to the channel using the Context object.
 	await ctx.channel.send("pong")
@@ -53,6 +54,7 @@ async def ping(ctx):
 	# Adds this value to the $help message.
 	brief="Starts the MUN session."
 )
+@commands.has_role('Committee')
 async def startSession(ctx):
 	session=True
 	await ctx.channel.send("Session has started!")
@@ -61,8 +63,9 @@ async def startSession(ctx):
 	# Adds this value to the $help print message.
 	help="Ends the MUN session and disables session commands.",
 	# Adds this value to the $help message.
-	brief="Starts the MUN session."
+	brief="Ends the MUN session."
 )
+@commands.has_role('Committee')
 async def endSession(ctx):
 	session=False
 	await ctx.channel.send("Session has ended!")
@@ -87,6 +90,7 @@ async def addGS(ctx):
 	# Adds this value to the $help message.
 	brief="View speakers list."
 )
+@commands.has_role('Committee')
 async def GS(ctx):
 	if session==False:
                 
@@ -101,6 +105,7 @@ async def GS(ctx):
 	# Adds this value to the $help message.
 	brief="Give someone the floor for a set amount of time."
 )
+@commands.has_role('Committee')
 async def speak(ctx,*args):
 	if session==False:
                 t=args[1]
@@ -116,6 +121,7 @@ async def speak(ctx,*args):
 	# Adds this value to the $help message.
 	brief="Propose a caucus."
 )
+@commands.has_role('Committee')
 async def propose(ctx,*args):
 	if session==False:
                 type=args[0]
@@ -141,6 +147,7 @@ async def propose(ctx,*args):
 	# Adds this value to the $help message.
 	brief="Give time in minutes for an unmod."
 )
+@commands.has_role('Committee')
 async def unmod(ctx,*args):
 	if session==False:
                 t=args[0]
@@ -150,7 +157,21 @@ async def unmod(ctx,*args):
                 
                 await ctx.channel.send("UnMod is over!")
 
-
+@bot.command(
+	# Adds this value to the $help print message.
+	help="Start an moderated caucus.",
+	# Adds this value to the $help message.
+	brief="Give time in minutes for an mod."
+)
+@commands.has_role('Committee')
+async def unmod(ctx,*args):
+	if session==False:
+                t=args[0]
+                
+                await ctx.channel.send("The Mod has started!")
+                time.sleep(int(t)*60)
+                
+                await ctx.channel.send("Mod is over!")
 
 
 # Command $print. This takes an in a list of arguments from the user and simply prints the values back to the channel.
@@ -160,6 +181,21 @@ async def unmod(ctx,*args):
 	# Adds this value to the $help message.
 	brief="Prints the list of values back to the channel."
 )
+@bot.command(
+	# Adds this value to the $help print message.
+	help="Start an unmod.",
+	# Adds this value to the $help message.
+	brief="Give time in minutes for an unmod."
+)
+@commands.has_role('Committee')
+async def unmod(ctx,*args):
+	if session==False:
+                t=args[0]
+                
+                await ctx.channel.send("The UnMod has started!")
+                time.sleep(int(t)*60)
+                
+                await ctx.channel.send("UnMod is over!")
 async def print(ctx, *args):
 	response = ""
 
