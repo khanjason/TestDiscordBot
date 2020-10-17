@@ -181,21 +181,7 @@ async def mod(ctx,*args):
 	# Adds this value to the $help message.
 	brief="Prints the list of values back to the channel."
 )
-@bot.command(
-	# Adds this value to the $help print message.
-	help="Start an unmod.",
-	# Adds this value to the $help message.
-	brief="Give time in minutes for an unmod."
-)
 @commands.has_role('Committee')
-async def unmod(ctx,*args):
-	if session==False:
-                t=args[0]
-                
-                await ctx.channel.send("The UnMod has started!")
-                time.sleep(int(t)*60)
-                
-                await ctx.channel.send("UnMod is over!")
 async def print(ctx, *args):
 	response = ""
 
