@@ -129,7 +129,7 @@ async def propose(ctx,*args):
                         total=args[1]
                         speaking=args[2]
                         country=args[3]
-                        topic=' '.join(word for word in args[3:])
+                        topic=' '.join(word for word in args[4:])
                         
                         m = await ctx.channel.send(country+" proposed a "+type+' caucus on '+topic+' for '+total+' mins with '+speaking+ ' seconds speakers time.')
                         await m.add_reaction("\U0001F44D")
