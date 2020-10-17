@@ -117,7 +117,7 @@ async def speak(ctx,*args):
                 await ctx.channel.send("time is up, "+u)
 @bot.command(
 	# Adds this value to the $help print message.
-	help="mod/unmod total time, speakers time, country, topic",
+	help="mod/unmod total time, [speakers time], country, [topic] -- [] for mod only",
 	# Adds this value to the $help message.
 	brief="Propose a caucus."
 )
