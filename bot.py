@@ -164,7 +164,7 @@ async def unmod(ctx,*args):
 	brief="Give time in minutes for an mod."
 )
 @commands.has_role('Committee')
-async def unmod(ctx,*args):
+async def mod(ctx,*args):
 	if session==False:
                 t=args[0]
                 
