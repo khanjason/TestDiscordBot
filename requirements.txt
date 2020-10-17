@@ -1,5 +1,2 @@
-
-time
-os
 redis
 discord.ext
